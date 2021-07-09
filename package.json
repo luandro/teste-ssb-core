@@ -3,12 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "postinstall": "./hacks/dedupe.sh",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build-vue": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "build": "mkdir -p build && NODE_ENV=production browserify -g envify -p esmify --full-paths src/ssb-setup.js > build/ssb-bundle.js && node src/write-dist.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "pull-stream": "^3.6.14",
+    "ssb-browser-core": "^11.0.1",
+    "ssb-caps": "^1.1.0",
+    "ssb-threads": "^8.0.0",
     "vue": "^3.0.0"
   },
   "devDependencies": {
@@ -17,8 +23,15 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
+    "browserify": "^17.0.0",
+    "envify": "^4.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0"
+    "eslint-plugin-vue": "^7.0.0",
+    "esmify": "^2.1.1",
+    "inline-source-cli": "^2.0.0",
+    "terser": "^5.7.1",
+    "uglifyify": "^5.0.2",
+    "workbox-build": "^6.1.5"
   },
   "eslintConfig": {
     "root": true,

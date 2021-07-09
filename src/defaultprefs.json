@@ -1,0 +1,22 @@
+{
+    "appTitle": "Rede Coolab",
+    "replicationHops": 2,
+    "publicFilters": "",
+    "favoriteChannels": ["coolab"],
+    "hiddenChannels": [],
+    "autorefresh": false,
+    "offlineMode": false,
+    "dhtEnabled": false,
+    "detailedLogging": false,
+    "suggestPeers": [
+      { "name": "Between Two Worlds Pub", "type": "pub", "address": "wss:between-two-worlds.dk:8989~shs:lbocEWqF2Fg6WMYLgmfYvqJlMfL7hiqVAV6ANjHWNw8=" },
+      { "name": "Between Two Worlds Room", "type": "room", "address": "wss:between-two-worlds.dk:9999~shs:7R5/crt8/icLJNpGwP2D7Oqz2WUd7ObCIinFKVR6kNY=", "default": false }
+    ],
+    "suggestFollows": [
+      { "name": "Luandro", "key": "@2RNGJafZtMHzd76gyvqH6EJiK7kBnXeak5mBWzoO/iU=.ed25519" },
+      { "name": "Rômulo Alves", "key": "@xr/Q/zqaEwmmd4wg8xRU1TrMLQhc9qBqNCioCqmv1vQ=.ed25519" },
+      { "name": "Hiure", "key": "@TMz3wLnXWIEOWUoLiE0tnqT8JerD3TBFiCPyofN28K8=.ed25519" }
+    ],
+    "theme": "default"
+  }
+  
