@@ -1,25 +1,23 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
 
-const ssbSingleton = window.getSSBSingleton()
-console.log("🚀 ~ file: main.js ~ line 5 ~ ssbSingleton", ssbSingleton)
+let SSB
+if (window.getSSBSingleton) {
+  const ssbSingleton = window.getSSBSingleton();
+  SSB = ssbSingleton.getSSB();
+} else {
+  console.log('Bundle not loaded!')
+}
 
-// ssbSingleton.onError(function(err) {
-//     document.body.classList.add('ssbError')
-//     document.getElementById("modalErrorMessage").innerHTML = err
-//   })
-//   ssbSingleton.onSuccess(function() {
-//     document.body.classList.remove('ssbError')
-//   });
+SSB.db.publish(
+  {
+    type: "post",
+    text: "oioi",
+  },
+  (err) => {
+    console.log("🚀 ~ file: main.js ~ line 12 ~ err", err);
+    console.log("Postado");
+  }
+);
 
-//   console.log("🚀 ~ file: main.js ~ line 7 ~ SSB", SSB)
-//   console.log("🚀 ~ file: main.js ~ line 7 ~ err", err)
-// SSB.db.publish({
-//     type: 'post',
-//     text: 'oioi'
-//   }, (err) => {
-//     console.log("🚀 ~ file: main.js ~ line 12 ~ err", err)
-//       console.log('Postado')
-//   })
-
-createApp(App).mount('#app')
+createApp(App).mount("#app");

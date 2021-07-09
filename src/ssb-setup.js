@@ -54,6 +54,7 @@ function extraModules(secretStack) {
       sbot.db.registerIndex(require('ssb-db2/indexes/about-self'))
     }
   })
+  // TODO: Retornar
   // .use({
   //   init: function (sbot, config) {
   //     sbot.db.registerIndex(require('./indexes/channels'))
@@ -64,8 +65,8 @@ function extraModules(secretStack) {
 
 function ssbLoaded() {
   // add helper methods
-  console.log(window)
   SSB = window.singletonSSB
+  // TODO: Retornar
   // require('./net')
   // require('./profile')
   // require('./search')

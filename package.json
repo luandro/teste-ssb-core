@@ -5,9 +5,10 @@
   "scripts": {
     "postinstall": "./hacks/dedupe.sh",
     "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "build-vue": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build": "mkdir -p build && NODE_ENV=production browserify -g envify -p esmify --full-paths src/ssb-setup.js > build/ssb-bundle.js && node src/write-dist.js"
+    "build": "NODE_ENV=production browserify -g envify -p esmify --full-paths src/ssb-setup.js > public/ssb-bundle.js && node src/write-dist.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
