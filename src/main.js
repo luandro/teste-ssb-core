@@ -1,19 +1,19 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-const ssbSingleton = require('ssb-browser-core/ssb-singleton')
-// console.log("🚀 ~ file: main.js ~ line 4 ~ ssbSingleton", ssbSingleton)
 
+const ssbSingleton = window.getSSBSingleton()
+console.log("🚀 ~ file: main.js ~ line 5 ~ ssbSingleton", ssbSingleton)
 
-ssbSingleton.onError(function(err) {
-    document.body.classList.add('ssbError')
-    document.getElementById("modalErrorMessage").innerHTML = err
-  })
-  ssbSingleton.onSuccess(function() {
-    document.body.classList.remove('ssbError')
-  });
-  const [ err, SSB ] = ssbSingleton.getSSB()
-  console.log("🚀 ~ file: main.js ~ line 7 ~ SSB", SSB)
-  console.log("🚀 ~ file: main.js ~ line 7 ~ err", err)
+// ssbSingleton.onError(function(err) {
+//     document.body.classList.add('ssbError')
+//     document.getElementById("modalErrorMessage").innerHTML = err
+//   })
+//   ssbSingleton.onSuccess(function() {
+//     document.body.classList.remove('ssbError')
+//   });
+
+//   console.log("🚀 ~ file: main.js ~ line 7 ~ SSB", SSB)
+//   console.log("🚀 ~ file: main.js ~ line 7 ~ err", err)
 // SSB.db.publish({
 //     type: 'post',
 //     text: 'oioi'
